@@ -1,21 +1,24 @@
 public class Selection {
+    public static void swap(int a[], int b, int c) {
+        int temp = a[b];
+        a[b] = a[c];
+        a[c] = temp;
+    }
+
     public static void main(String args[]) {
         int a[] = { 3, 7, 9, 1, 2 };
-        int min = 0;
-        for (int i = 0; i <= a.length; i++) {
+        int min = 0;// dec 
+        for (int i = 0; i < a.length - 1; i++)// 
+        {
             min = i;
-            for (int j = i + 1; j <= a.length; j++) {
+            for (int j = i + 1; j < a.length; j++) {
                 if (a[min] > a[j]) {
                     min = j;
 
                 }
-                if (min != i) {
-                    int temp = a[i];
-                    a[i] = a[min];
-                    a[min] = temp;
-                }
 
             }
+            swap(a, min, i);
 
         }
         for (int i = 0; i < a.length; i++) {
